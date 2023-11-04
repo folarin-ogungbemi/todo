@@ -1,2 +1,0 @@
-# todo
-django fullstack application
