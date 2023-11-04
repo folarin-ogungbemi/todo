@@ -4,5 +4,5 @@ from todo_app.views import todo_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test/', todo_list,)
+    path('', todo_list, name='todos')
 ]
