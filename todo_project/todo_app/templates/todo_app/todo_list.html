@@ -13,6 +13,8 @@
     {% for item in todos %}
     <p>{{ item }}</p>
     {% endfor %}
+    <br />
+    <a href="{% url 'add_todo' %}">Add Todo</a>
     <script src="index.js"></script>
   </body>
 </html>
