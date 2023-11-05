@@ -10,14 +10,19 @@
   <body>
     <!--TODOs-->
     <h1>TODOs</h1>
-    {% for todo in todos %}
-    <p>{{ todo }}</p>
-    <a href="/edit/{{ todo.id }}">Update</a>
-    <a href="/delete/{{ todo.id }}">Delete</a>
-    {% endfor %}
-    <br />
-    <br />
-    <a href="{% url 'add_todo' %}">Add Todo</a>
-    <script src="index.js"></script>
+    {% for todo in todos %} {% if todo.done %}
+    <p><strike>{{ todo }}</strike></p>
+    {% else %}
+    <p>{{ todo}}</p>
+    {% endif %}
+      <a href="/edit/{{ todo.id }}">Edit</a>
+      <a href="/toggle/{{ todo.id }}">Toggle</a>
+      <a href="/delete/{{ todo.id }}">Delete</a>
+      {% endfor %}
+      <br />
+      <br />
+      <a href="{% url 'add_todo' %}">Add Todo</a>
+      <script src="index.js"></script>
+    </p>
   </body>
 </html>
