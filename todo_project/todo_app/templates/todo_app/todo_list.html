@@ -12,8 +12,10 @@
     <h1>TODOs</h1>
     {% for todo in todos %}
     <p>{{ todo }}</p>
-    <a href="/edit/{{ todo.id }}">Update Todo</a>
+    <a href="/edit/{{ todo.id }}">Update</a>
+    <a href="/delete/{{ todo.id }}">Delete</a>
     {% endfor %}
+    <br />
     <br />
     <a href="{% url 'add_todo' %}">Add Todo</a>
     <script src="index.js"></script>
