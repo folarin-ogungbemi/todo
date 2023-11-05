@@ -48,3 +48,11 @@ def delete_todo(request, todo_id):
     todo = get_object_or_404(Todo, id=todo_id)
     todo.delete()
     return redirect('todos')
+
+
+def toggle_status(request, todo_id):
+    # TOGGLE a todo item status
+    todo = get_object_or_404(Todo, id=todo_id)
+    todo.done = not todo.done
+    todo.save()
+    return redirect('todos')
