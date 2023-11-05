@@ -41,3 +41,10 @@ def edit_todo(request, todo_id):
         'form': form
     }
     return render(request, 'todo_app/update_todo.html', context)
+
+
+def delete_todo(request, todo_id):
+    # DELETE a todo item
+    todo = get_object_or_404(Todo, id=todo_id)
+    todo.delete()
+    return redirect('todos')
