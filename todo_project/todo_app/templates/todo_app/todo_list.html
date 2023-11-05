@@ -10,8 +10,9 @@
   <body>
     <!--TODOs-->
     <h1>TODOs</h1>
-    {% for item in todos %}
-    <p>{{ item }}</p>
+    {% for todo in todos %}
+    <p>{{ todo }}</p>
+    <a href="/edit/{{ todo.id }}">Update Todo</a>
     {% endfor %}
     <br />
     <a href="{% url 'add_todo' %}">Add Todo</a>
