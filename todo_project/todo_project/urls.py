@@ -1,9 +1,10 @@
 from django.contrib import admin
 from django.urls import path
-from todo_app.views import todo_list, create_todo
+from todo_app.views import todo_list, add_todo, edit_todo
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', todo_list, name='todos'),
-    path('add', create_todo, name='add_todo'),
+    path('add', add_todo, name='add_todo'),
+    path('edit/<todo_id>', edit_todo, name='edit')
 ]
